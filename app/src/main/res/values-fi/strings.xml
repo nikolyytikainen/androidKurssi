@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">androidKurssi</string>
+    <string name="startButtonText">ALOITA</string>
+    <string name="helloText">Terve Maailma!</string>
+    <string name="gameButtonText">GAME</string>
+    <string name="starPicture">tahtiKuva</string>
+</resources>

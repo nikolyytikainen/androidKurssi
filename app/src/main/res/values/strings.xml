@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">androidKurssi</string>
+    <string name="startButtonText">START</string>
+    <string name="helloText">Hello World!</string>
+    <string name="gameButtonText">GAME</string>
+    <string name="starPicture">starPicture</string>
+</resources>
