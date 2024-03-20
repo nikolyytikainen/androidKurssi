@@ -5,4 +5,5 @@
     <string name="helloText">Terve Maailma!</string>
     <string name="gameButtonText">GAME</string>
     <string name="starPicture">tahtiKuva</string>
+    <string name="gameTitleText">Demo Peli</string>
 </resources>

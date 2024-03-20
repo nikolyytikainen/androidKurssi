@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameActivity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="210dp"
+        android:layout_height="91dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="153dp"
+        android:layout_marginEnd="160dp"
+        android:autoSizeTextType="uniform"
+        android:text="@string/gameTitleText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:layout_width="272dp"
+        android:layout_height="169dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="276dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="295dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <ImageButton
+            android:id="@+id/velho1"
+            android:layout_width="133dp"
+            android:layout_height="142dp"
+            app:srcCompat="@mipmap/ic_launcher_foreground"
+            tools:layout_editor_absoluteX="73dp"
+            tools:layout_editor_absoluteY="281dp" />
+
+        <ImageButton
+            android:id="@+id/velho2"
+            android:layout_width="133dp"
+            android:layout_height="142dp"
+            app:srcCompat="@mipmap/ic_launcher_foreground"
+            tools:layout_editor_absoluteX="73dp"
+            tools:layout_editor_absoluteY="281dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="272dp"
+        android:layout_height="169dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="446dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="132dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageButton
+            android:id="@+id/velho3"
+            android:layout_width="133dp"
+            android:layout_height="142dp"
+            app:srcCompat="@mipmap/ic_launcher_foreground"
+            tools:layout_editor_absoluteX="73dp"
+            tools:layout_editor_absoluteY="281dp" />
+
+        <ImageButton
+            android:id="@+id/velho4"
+            android:layout_width="133dp"
+            android:layout_height="142dp"
+            app:srcCompat="@mipmap/ic_launcher_foreground"
+            tools:layout_editor_absoluteX="73dp"
+            tools:layout_editor_absoluteY="281dp" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

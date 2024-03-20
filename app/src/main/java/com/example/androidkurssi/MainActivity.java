@@ -1,5 +1,6 @@
 package com.example.androidkurssi;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -65,6 +66,7 @@ public class MainActivity extends AppCompatActivity{
                 break;
             case R.id.gameButton:
                 Log.d(TAG, "User tapped the gameButton");
+                startActivity(new Intent(MainActivity.this, GameActivity.class));
                 break;
 
 
