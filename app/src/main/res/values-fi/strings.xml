@@ -6,4 +6,6 @@
     <string name="gameButtonText">GAME</string>
     <string name="starPicture">tahtiKuva</string>
     <string name="gameTitleText">Demo Peli</string>
+    <string name="restart">restart</string>
+    <string name="gameScore">Pisteet:</string>
 </resources>

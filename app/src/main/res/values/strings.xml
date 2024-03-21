@@ -5,4 +5,6 @@
     <string name="gameButtonText">GAME</string>
     <string name="starPicture">starPicture</string>
     <string name="gameTitleText">Demo Game</string>
+    <string name="restart">restart</string>
+    <string name="gameScore">Score:</string>
 </resources>
