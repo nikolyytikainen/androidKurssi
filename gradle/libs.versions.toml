@@ -10,6 +10,10 @@ constraintlayout = "2.1.4"
 datastorePreferences = "1.0.0"
 datastorePreferencesRxjava2 = "1.0.0"
 datastorePreferencesRxjava3 = "1.0.0"
+lifecycleLivedataKtx = "2.7.0"
+lifecycleViewmodelKtx = "2.7.0"
+navigationFragment = "2.7.7"
+navigationUi = "2.7.7"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -22,6 +26,10 @@ constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayo
 datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastorePreferences" }
 datastore-preferences-rxjava2 = { group = "androidx.datastore", name = "datastore-preferences-rxjava2", version.ref = "datastorePreferencesRxjava2" }
 datastore-preferences-rxjava3 = { group = "androidx.datastore", name = "datastore-preferences-rxjava3", version.ref = "datastorePreferencesRxjava3" }
+lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycleLivedataKtx" }
+lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
+navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment", version.ref = "navigationFragment" }
+navigation-ui = { group = "androidx.navigation", name = "navigation-ui", version.ref = "navigationUi" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

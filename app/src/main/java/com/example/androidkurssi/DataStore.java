@@ -1,17 +1,15 @@
 package com.example.androidkurssi;
 
+import androidx.datastore.preferences.core.Preferences;
 import androidx.datastore.rxjava2.RxDataStore;
 
-import java.util.prefs.Preferences;
-import androidx.datastore.preferences.core.Preferences;
-
-public class DataStoreSingleton {
+public class DataStore {
     RxDataStore<Preferences> datastore;
-    private static final DataStoreSingleton ourInstance = new DataStoreSingleton();
-    public static DataStoreSingleton getInstance() {
+    private static final DataStore ourInstance = new DataStore();
+    public static synchronized DataStore getInstance() {
         return ourInstance;
     }
-    private DataStoreSingleton() { }
+    private DataStore() { }
     public void setDataStore(RxDataStore<Preferences> datastore) {
         this.datastore = datastore;
     }

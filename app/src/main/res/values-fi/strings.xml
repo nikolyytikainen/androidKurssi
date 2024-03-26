@@ -8,4 +8,8 @@
     <string name="gameTitleText">Demo Peli</string>
     <string name="restart">restart</string>
     <string name="gameScore">Pisteet:</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="title_home">Koti</string>
+    <string name="title_dashboard">Kojelauta</string>
+    <string name="title_notifications">Ilmoitukset</string>
 </resources>

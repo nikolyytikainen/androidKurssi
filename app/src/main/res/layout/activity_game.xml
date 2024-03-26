@@ -7,6 +7,19 @@
     android:layout_height="match_parent"
     tools:context=".GameActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/gameToolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleTextColor="@android:color/white"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="210dp"

@@ -11,12 +11,14 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
+import androidx.appcompat.widget.Toolbar;
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+//import androidx.datastore.core.DataStore;
 import androidx.datastore.preferences.core.MutablePreferences;
 import androidx.datastore.preferences.core.Preferences;
 import androidx.datastore.preferences.core.PreferencesKeys;
@@ -30,6 +32,7 @@ import java.util.Random;
 //import io.reactivex.rxjava3.core.Single;
 import io.reactivex.Single;
 
+
 public class GameActivity extends AppCompatActivity {
 
     public static final String TAG = "GameActivity";
@@ -39,11 +42,15 @@ public class GameActivity extends AppCompatActivity {
     private ImageButton velhoButton3;
     private ImageButton velhoButton4;
     private FloatingActionButton restartButton;
+    private TextView scoreText;
+
     private View contentView;
     int rand_int1;
     int score = 0;
+    String scoreTeksti = "";
     private static final String KEY_HS = "HighestScore";
     RxDataStore<Preferences> dataStoreRX;
+    DataStoreHelper dataStoreHelper;
 
 
 
@@ -59,23 +66,39 @@ public class GameActivity extends AppCompatActivity {
             return insets;
         });
 
+        rand_int1 = rand.nextInt(4);
+
 
         //dataStore = new RxPreferenceDataStoreBuilder(this, "gameScoreStore").build();
 
-        DataStoreSingleton dataStoreSingleton = DataStoreSingleton.getInstance();
-        if (dataStoreSingleton.getDataStore() == null) {
-            dataStoreRX = new RxPreferenceDataStoreBuilder(this, "dataStoreRX").build();
+        DataStore dataStore = DataStore.getInstance();
+        if (dataStore.getDataStore() == null) {
+            dataStoreRX = new RxPreferenceDataStoreBuilder(this, TAG).build();
         } else {
-            dataStoreRX = dataStoreSingleton.getDataStore();
+            dataStoreRX = dataStore.getDataStore();
         }
-        dataStoreSingleton.setDataStore(dataStoreRX);
+        dataStore.setDataStore(dataStoreRX);
+        dataStoreHelper = new DataStoreHelper();
 
-        rand_int1 = rand.nextInt(4);
-
+        scoreTeksti = (getResources().getString(R.string.gameScore));
+        // PELIN PISTEET-----------------------------------------------
         if (getStringValue("gamescore") != null) {
             Log.d(TAG,"getstringvaluen arvo on: "+ getStringValue("gamescore"));
             score = Integer.valueOf(getStringValue("gamescore"));
         }
+        scoreText = (TextView) findViewById(R.id.textView3);
+        scoreText.setText(scoreTeksti + score);
+        // PELIN PISTEET -----------------------------------------------
+
+        //BACK NAVIGOINTI -----------------------------------------------
+        Toolbar toolbar = (Toolbar) findViewById(R.id.gameToolbar);
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
+        //BACK NAVIGOINTI -----------------------------------------------
+
+        //PELIN NAPIT-----------------------------------------------
         velhoButton1 = (ImageButton) findViewById(R.id.velho1);
         velhoButton1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -109,7 +132,7 @@ public class GameActivity extends AppCompatActivity {
                 handleOnClickEvents(v);
             }
         });
-
+        //PELIN NAPIT-----------------------------------------------
     }
 
     public void handleOnClickEvents(View v) {
@@ -178,9 +201,11 @@ public class GameActivity extends AppCompatActivity {
     private void updateScore() {
         score++;
         TextView scoreTextView = findViewById(R.id.textView3);
-        scoreTextView.setText("Score:" + score);
+        scoreTextView.setText(scoreTeksti + score);
         putStringValue("gamescore",Integer.toString(score));
     }
+
+
 
     public void putStringValue(String Key, String value){
         Preferences.Key<String> PREF_KEY = PreferencesKeys.stringKey(Key);
