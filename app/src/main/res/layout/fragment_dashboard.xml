@@ -12,12 +12,16 @@
         android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sijantitietosi" />
+        android:textSize="27dp"
+        android:text="Sijantitietosi"
+        android:paddingTop="50dp"
+        android:paddingBottom="150dp"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textLatitude"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:hint="Latitude">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -31,6 +35,7 @@
         android:id="@+id/textLangitude"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:hint="Langitude">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -43,7 +48,8 @@
         android:id="@+id/textAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Osoite">
+        android:hint="Osoite"
+        android:layout_marginBottom="10dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
