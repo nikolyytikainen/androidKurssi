@@ -5,6 +5,8 @@ import static androidx.core.content.ContextCompat.getSystemService;
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -32,6 +34,10 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 import org.w3c.dom.Text;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
 
 public class DashboardFragment extends Fragment implements LocationListener {
 
@@ -69,6 +75,11 @@ public class DashboardFragment extends Fragment implements LocationListener {
             }
         });
 
+        textLat = (TextInputEditText) root.findViewById(R.id.textLatitude);
+        textLg = (TextInputEditText) root.findViewById(R.id.textLangitude);
+        textLocation = (TextInputEditText) root.findViewById(R.id.textAddress);
+
+
 
         if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
@@ -89,12 +100,12 @@ public class DashboardFragment extends Fragment implements LocationListener {
 
             Log.e(TAG, "lat: " + String.valueOf(lat) + "long: " + String.valueOf(lg));
 
-            textLat = (TextInputEditText) root.findViewById(R.id.textLatitude);
-            textLg = (TextInputEditText) root.findViewById(R.id.textLangitude);
-            textLocation = (TextInputEditText) root.findViewById(R.id.textAddress);
+
             textLat.setText(String.valueOf(lat));
             textLg.setText(String.valueOf(lg));
+            getAddress(lastLocation);
         }
+
 
 
         //final TextView textView = binding.textDashboard;
@@ -120,12 +131,34 @@ public class DashboardFragment extends Fragment implements LocationListener {
         binding = null;
     }
 
+    public void getAddress(Location l){
+        Geocoder geocoder;
+        List<Address> addresses;
+        Locale finnish = new Locale("fi", "FI");
+        geocoder = new Geocoder(getContext(), finnish);
+        try {
+            addresses = geocoder.getFromLocation(l.getLatitude(), l.getLongitude(), 1); // Here 1 represent maxResults
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        assert addresses != null;
+        String address = addresses.get(0).getAddressLine(0); // getAddressLine returns a line of the address
+        // numbered by the given index
+        String city = addresses.get(0).getLocality();
+        String country = addresses.get(0).getCountryName();
+        String postalCode = addresses.get(0).getPostalCode();
+        textLocation.setText(address);
+
+
+    }
+
 
     @Override
     public void onLocationChanged(Location location) {
 
         String msg = "Updated Location: " +
-                String.valueOf(location.getLatitude()) + "," +
+                String.valueOf(location.getLatitude()) + ", " +
                 String.valueOf(location.getLongitude());
         Toast.makeText(getActivity(), msg, Toast.LENGTH_SHORT).show();
 
@@ -134,7 +167,9 @@ public class DashboardFragment extends Fragment implements LocationListener {
         if (lastLocation != null) {
             textLat.setText(String.valueOf(lastLocation.getLatitude()));
             textLg.setText(String.valueOf(lastLocation.getLongitude()));
-            //textLocation.setText(getAddress(lastLocation));
+            getAddress(lastLocation);
+
+
         }
     }
 
