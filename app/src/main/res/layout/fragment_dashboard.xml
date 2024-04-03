@@ -18,13 +18,14 @@
         android:paddingBottom="150dp"/>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textLatitude"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:hint="Latitude">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textLatitude"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             />
@@ -32,33 +33,35 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textLangitude"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:hint="Langitude">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textLangitude"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textAddress"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Osoite"
         android:layout_marginBottom="10dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textAddress"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/showOnMapButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Button" />
