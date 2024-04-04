@@ -4,12 +4,14 @@ import static androidx.core.content.ContextCompat.getSystemService;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -50,6 +52,8 @@ public class DashboardFragment extends Fragment implements LocationListener {
     private TextInputEditText textLocation;
     Location lastLocation;
     Location location;
+    Intent mapIntent;
+    Uri gmmIntentUri;
 
     Double lat;
     Double lg;
@@ -76,7 +80,7 @@ public class DashboardFragment extends Fragment implements LocationListener {
         });
 
         textLat = (TextInputEditText) root.findViewById(R.id.textLatitude);
-        textLg = (TextInputEditText) root.findViewById(R.id.textLangitude);
+        textLg = (TextInputEditText) root.findViewById(R.id.textLongitude);
         textLocation = (TextInputEditText) root.findViewById(R.id.textAddress);
 
 
@@ -104,6 +108,9 @@ public class DashboardFragment extends Fragment implements LocationListener {
             textLat.setText(String.valueOf(lat));
             textLg.setText(String.valueOf(lg));
             getAddress(lastLocation);
+            gmmIntentUri = Uri.parse("geo:"+lat+","+lg);
+            mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+            mapIntent.setPackage("com.google.android.apps.maps");
         }
 
 
@@ -119,6 +126,7 @@ public class DashboardFragment extends Fragment implements LocationListener {
         switch (v.getId()) {
             case R.id.showOnMapButton:
                 Log.d(TAG, "testi");
+                startActivity(mapIntent);
                 break;
 
         }
@@ -129,6 +137,13 @@ public class DashboardFragment extends Fragment implements LocationListener {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    @Override
+    public void onStop() {
+        //Tätä metodia kutsutaan, kun fragmentti ei enää näy käyttäjälle. ja lopettaa sijainninpäivityksen
+        super.onStop();
+        locationManager.removeUpdates(this);
     }
 
     public void getAddress(Location l){
@@ -168,6 +183,9 @@ public class DashboardFragment extends Fragment implements LocationListener {
             textLat.setText(String.valueOf(lastLocation.getLatitude()));
             textLg.setText(String.valueOf(lastLocation.getLongitude()));
             getAddress(lastLocation);
+            gmmIntentUri = Uri.parse("geo:"+lastLocation.getLatitude()+","+lastLocation.getLongitude());
+            mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+            mapIntent.setPackage("com.google.android.apps.maps");
 
 
         }

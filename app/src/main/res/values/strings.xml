@@ -2,13 +2,22 @@
     <string name="app_name">androidKurssi</string>
     <string name="startButtonText">START</string>
     <string name="helloText">Hello World!</string>
-    <string name="gameButtonText">GAME</string>
+    <string name="gameButtonText">Demo Game</string>
     <string name="starPicture">starPicture</string>
     <string name="gameTitleText">Demo Game</string>
     <string name="restart">restart</string>
     <string name="gameScore">Score:</string>
     <string name="title_activity_main2">MainActivity2</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="title_dashboard">Location</string>
     <string name="title_notifications">Notifications</string>
+    <string name="locationTitle">Your Location</string>
+    <string name="latitudeHint">Latitude</string>
+    <string name="longitudeHint">Longitude</string>
+    <string name="addressHint">Address</string>
+    <string name="showMapButton">Show On Map</string>
+
+
+
+
 </resources>

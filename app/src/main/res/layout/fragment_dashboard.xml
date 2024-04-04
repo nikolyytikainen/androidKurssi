@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="27dp"
-        android:text="Sijantitietosi"
+        android:text="@string/locationTitle"
         android:paddingTop="50dp"
         android:paddingBottom="150dp"/>
 
@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:hint="Latitude">
+        android:hint="@string/latitudeHint">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textLatitude"
@@ -37,10 +37,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:hint="Langitude">
+        android:hint="@string/longitudeHint">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textLangitude"
+            android:id="@+id/textLongitude"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
@@ -50,7 +50,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Osoite"
+        android:hint="@string/addressHint"
         android:layout_marginBottom="10dp">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -64,7 +64,7 @@
         android:id="@+id/showOnMapButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="@string/showMapButton" />
 
 
 </LinearLayout>

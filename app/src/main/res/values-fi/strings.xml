@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">androidKurssi</string>
-    <string name="startButtonText">ALOITA</string>
+    <string name="startButtonText">Aloita</string>
     <string name="helloText">Terve Maailma!</string>
-    <string name="gameButtonText">GAME</string>
+    <string name="gameButtonText">Demo peli</string>
     <string name="starPicture">tahtiKuva</string>
     <string name="gameTitleText">Demo Peli</string>
     <string name="restart">restart</string>
     <string name="gameScore">Pisteet:</string>
     <string name="title_activity_main2">MainActivity2</string>
     <string name="title_home">Koti</string>
-    <string name="title_dashboard">Kojelauta</string>
+    <string name="title_dashboard">Sijainti</string>
     <string name="title_notifications">Ilmoitukset</string>
+    <string name="locationTitle">Sijaintisi</string>
+    <string name="latitudeHint">Leveysaste</string>
+    <string name="longitudeHint">Pituusaste</string>
+    <string name="addressHint">Osoite</string>
+    <string name="showMapButton">Näytä kartalla</string>
+
+
+
+
 </resources>
