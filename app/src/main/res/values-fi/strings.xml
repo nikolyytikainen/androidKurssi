@@ -17,6 +17,11 @@
     <string name="longitudeHint">Pituusaste</string>
     <string name="addressHint">Osoite</string>
     <string name="showMapButton">Näytä kartalla</string>
+    <string name="airPlaneModeOn">Lentokonetila päällä</string>
+    <string name="airPlaneModeOff">Lentokonetila poissa päältä</string>
+    <string name="buttonStart">ALOITA</string>
+    <string name="buttonPause">TAUKO</string>
+    <string name="buttonStop">PYSÄTYTÄ</string>
 
 
 

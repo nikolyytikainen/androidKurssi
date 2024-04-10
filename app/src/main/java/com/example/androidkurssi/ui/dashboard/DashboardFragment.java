@@ -111,6 +111,7 @@ public class DashboardFragment extends Fragment implements LocationListener {
             gmmIntentUri = Uri.parse("geo:"+lat+","+lg);
             mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
             mapIntent.setPackage("com.google.android.apps.maps");
+            Log.d(TAG,"tämä on Uri onCreateView"+ gmmIntentUri);
         }
 
 
@@ -164,6 +165,7 @@ public class DashboardFragment extends Fragment implements LocationListener {
         String country = addresses.get(0).getCountryName();
         String postalCode = addresses.get(0).getPostalCode();
         textLocation.setText(address);
+        Log.d(TAG,"tämä on Uri GetAddress "+ gmmIntentUri);
 
 
     }
@@ -186,6 +188,7 @@ public class DashboardFragment extends Fragment implements LocationListener {
             gmmIntentUri = Uri.parse("geo:"+lastLocation.getLatitude()+","+lastLocation.getLongitude());
             mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
             mapIntent.setPackage("com.google.android.apps.maps");
+            Log.d(TAG,"tämä on Uri onLocationChanged "+ gmmIntentUri);
 
 
         }

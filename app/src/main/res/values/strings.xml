@@ -16,6 +16,11 @@
     <string name="longitudeHint">Longitude</string>
     <string name="addressHint">Address</string>
     <string name="showMapButton">Show On Map</string>
+    <string name="airPlaneModeOn">Airplane mode ON</string>
+    <string name="airPlaneModeOff">Airplane mode OFF</string>
+    <string name="buttonStart">START</string>
+    <string name="buttonPause">PAUSE</string>
+    <string name="buttonStop">STOP</string>
 
 
 
