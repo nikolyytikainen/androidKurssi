@@ -43,9 +43,13 @@ dependencies {
     implementation(libs.lifecycle.viewmodel.ktx)
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
+    implementation(libs.volley)
+    implementation(libs.recyclerview)
+    implementation(libs.recyclerview.selection)
     //implementation(libs.datastore.preferences.rxjava3)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
 
 }

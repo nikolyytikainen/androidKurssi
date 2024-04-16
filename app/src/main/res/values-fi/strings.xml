@@ -21,7 +21,9 @@
     <string name="airPlaneModeOff">Lentokonetila poissa päältä</string>
     <string name="buttonStart">ALOITA</string>
     <string name="buttonPause">TAUKO</string>
-    <string name="buttonStop">PYSÄTYTÄ</string>
+    <string name="buttonStop">PYSÄYTÄ</string>
+    <string name="searchCompany">Etsi yritystä nimellä</string>
+    <string name="buttonSearch">Etsi</string>
 
 
 

@@ -21,8 +21,8 @@
     <string name="buttonStart">START</string>
     <string name="buttonPause">PAUSE</string>
     <string name="buttonStop">STOP</string>
-
-
+    <string name="searchCompany">Search company by name</string>
+    <string name="buttonSearch">Search</string>
 
 
 </resources>
