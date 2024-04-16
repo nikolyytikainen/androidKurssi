@@ -7,14 +7,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.androidkurssi.GameActivity;
-import com.example.androidkurssi.MainActivity;
+import com.example.androidkurssi.MainActivity3;
 import com.example.androidkurssi.R;
 import com.example.androidkurssi.databinding.FragmentHomeBinding;
 
@@ -23,8 +23,10 @@ public class HomeFragment extends Fragment {
     private FragmentHomeBinding binding;
     private Button sButton;
     private Button gameButton;
+    private Button companyButton;
     public static final String TAG = "HomeFragment";
     private View contentView;
+    public EditText companyName;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -39,6 +41,7 @@ public class HomeFragment extends Fragment {
         //homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
         contentView = root.findViewById(R.id.textView);
+        companyName = root.findViewById(R.id.editTextText);
 
         sButton = (Button) root.findViewById(R.id.startButton);
         sButton.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +56,17 @@ public class HomeFragment extends Fragment {
                 handleOnClickEvents(v);
             }
         });
+
+
+        companyButton = (Button) root.findViewById(R.id.companyButton);
+        companyButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                handleOnClickEvents(v);
+            }
+        });
+
+
+
 
         return root;
     }
@@ -80,6 +94,15 @@ public class HomeFragment extends Fragment {
                 Log.d(TAG, "User tapped the gameButton");
                 Intent i = new Intent(getActivity(), GameActivity.class);
                 startActivity(i);
+                break;
+            case R.id.companyButton:
+                Log.d(TAG, "User tapped the companyButton");
+                MainActivity3 mainActivity3 = new MainActivity3();
+                //mainActivity3.searchCompanies(getActivity(), companyName.getText().toString());
+
+
+                Intent intent = new Intent(getActivity(), MainActivity3.class);
+                startActivity(intent);
                 break;
 
 
