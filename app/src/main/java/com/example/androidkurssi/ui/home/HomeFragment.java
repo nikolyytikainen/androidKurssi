@@ -97,11 +97,9 @@ public class HomeFragment extends Fragment {
                 break;
             case R.id.companyButton:
                 Log.d(TAG, "User tapped the companyButton");
-                MainActivity3 mainActivity3 = new MainActivity3();
-                //mainActivity3.searchCompanies(getActivity(), companyName.getText().toString());
-
-
+                String companyNametoActivity = companyName.getText().toString();
                 Intent intent = new Intent(getActivity(), MainActivity3.class);
+                intent.putExtra("COMPANY_NAME", companyNametoActivity);
                 startActivity(intent);
                 break;
 
