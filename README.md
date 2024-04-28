@@ -1,0 +1,1 @@
+Tässä repositoriossa on Android- ja Javaohjelmoinnin kurssinn sovellus. Sovelluksessa on pienimuotoinen peli, karttaominaisuus joka pystyy hakemaan sijainnin, ajastin, sekä yrityshaku ominaisuus. Sovelluksen tällähetkellä saa ainoastaan toimimaan jos cloonaa repositorion ja androidstudion kautta käynnistää sen. 
